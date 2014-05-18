@@ -51,7 +51,7 @@ in
   services.ddclient = {
     enable = true;
     protocol = "noip";
-    web = "web, web=checkip.dyndns.com";
+    web = "";
     username = secrets.noip-username;
     password = secrets.noip-password;
     server = "dynupdate.no-ip.com";

@@ -93,6 +93,7 @@ in
       name = "chexxor";
       group = "chexxor";
       password = secrets.chexxorPass;
+      openssh.authorizedKeys.keys = [ secrets.ssh-publicKey-yoga ];
       extraGroups = [ "users" "wheel" ];
       home = "/home/chexxor";
       createHome = true;

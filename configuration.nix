@@ -20,6 +20,10 @@ in
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
+  swapDevices = [ {
+    device = "/dev/sda2";
+  } ];
+
   ### NETWORKING ###
 
   networking.hostName = "nixos";
@@ -27,7 +31,7 @@ in
   networking.firewall.allowPing = false;
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [
-    22 5000
+    2233 5000
   ];
 
   ### SYSTEM APPS ###
@@ -41,6 +45,9 @@ in
 
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "yes";
+  services.openssh.ports = [
+    2233
+  ];
 
   services.znc = {
     enable = true;
